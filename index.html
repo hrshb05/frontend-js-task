@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <header>
+        <div class="background">
+            <div class="cart">
+                <h3>Shopping Cart</h3>
+            </div>
+            <div class="category">
+                <p>Home/Clothing Categories/My Shopping Cart</p>
+            </div>
+        </div>
+    </header>
+    <div class="sections">
+        <main class="about">
+            <div class="address">
+                <p class="customer">Customer Details</p>
+                <div class="billing">
+                    <div class="b-add">
+                        <p>Billing Address</p>
+                    </div>
+                    <div class="add">
+                        <p class="billed">C-290,5th Down Street, Manchester, UK</p>
+                        <button class="change">CHANGE</button>
+                    </div>
+                </div>
+                <div class="billing">
+                    <div class="s-add">
+                        <p>Shopping Address</p>
+                    </div>
+                    <div class="add">
+                        <p class="shipped">E/90,15th Down Street,South Bay Manchester, UK 89021</p>
+                        <button class="change">CHANGE</button>
+                    </div>
+                </div>
+                <div class="new">
+                    <p> + Add New Address</p>
+                </div>
+            </div>
+            <div class="modal-cart">
+                <div class="e-address">
+                    <h4>Add Address</h4>
+                </div>
+                <hr size=4.5 noshade class="horizon">
+                <div class="existing">
+                    <div class="bill">
+                        <div class="e-add">
+                            <p class="e-bill">C-290,5th Down Street, Manchester, UK</p>
+                            <div class="select-add">
+                                <label class="set-bill"><input type="radio" id="set-b" name="billing-add" checked>
+                                    Set Billing Address</label>
+                                <label class="set-ship"><input type="radio" id="set-s" name="shipping-add">
+                                    Set Shipping Address</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bill">
+                        <div class="e-add">
+                            <p class="e-bill">E/90,15th Down Street,South Bay Manchester, UK 89021</p>
+                            <div class="select-add">
+                                <label class="set-bill"><input type="radio" id="set-b" name="billing-add">
+                                    Set Billing Address</label>
+                                <label class="set-ship"><input type="radio" id="set-s" name="shipping-add" checked>
+                                    Set Shipping Address</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bill">
+                        <div class="e-add">
+                            <p class="e-bill">1245, Foxbay area,54th new street, Hampshire, UK 89721</p>
+                            <div class="select-add">
+                                <label class="set-bill"><input type="radio" id="set-b" name="billing-add">
+                                    Set Billing Address</label>
+                                <label class="set-ship"><input type="radio" id="set-s" name="shipping-add">
+                                    Set Shipping Address</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="set">
+                    <button class="set-address">Set Address</button>
+                </div>
+                <hr size="6" noshade>
+                <form class="new-add" id="myform">
+                    <div class="details-add">
+                        <label class="details">Flat/Condo/House Number</label>
+                        <br>
+                        <input type="text" name="flat" required class="de-add">
+                    </div>
+                    <div class="details-add">
+                        <label class="details">Street Number/name</label>
+                        <br>
+                        <input type="text" name="street" required class="de-add">
+                    </div>
+                    <div class="details-add">
+                        <label class="details">City</label>
+                        <br>
+                        <input type="text" name="city" required class="de-add">
+                    </div>
+                    <div class="details-add">
+                        <label class="details">Country</label>
+                        <br>
+                        <select class="de-add se-add" name="" id="country" required>
+                            <option value="" selected disabled hidden></option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                        </select>
+                    </div>
+                    <div class="details-add">
+                        <label class="details">Zip Code</label>
+                        <br>
+                        <input type="number" name="zip" class="de-add">
+                    </div>
+                </form>
+                <button class="add-address" form="myform">Add Address</button>
+            </div>
+            <section class="payment">
+                <div class="method">
+                    <p class="paym">PAYMENT METHOD</p>
+                </div>
+                <div class="pay">
+                    <label class="debit"> <input type="radio" name="payment" id="pay"> <i class="fa-solid fa-credit-card card"></i> Debit/Credit Card </label>
+                    <div class="pay-card cards">
+                        <label class="enter">Enter Card Number*</label><br>
+                        <input type="number" name="" class="card-num" required><br>
+                        <div id="validation-status"></div>
+                        <div class="dates"> <label class="enter">Valid Date*</label>
+                            <br>
+                            <select id="ex-month" required class="mon">
+                                <option disabled selected hidden>MM</option>
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <select id="ex-year" required class="year">
+                                <option disabled selected hidden>YYYY</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                            </select>
+                        </div>
+                        <div class="cvv">
+                            <label class="enter-cvv">CVV*</label>
+                            <br>
+                            <input type="number" name="" class="cvv-num">
+                            <div id="validation"></div>
+                        </div>
+                        <div class="amount"> Pay $<span class="payamount">120</span></div>
+                    </div>
+                </div>
+                <div class="pay">
+                    <label class="debit"> <input type="radio" name="payment" id="pay"> <i class="fa-solid fa-credit-card card"></i> Net Banking</label>
+                    <div class="pay-card net">
+                        <label class="enter">Enter Card Number*</label><br>
+                        <input type="number" name="" class="card-num"><br>
+                        <div id="validation-status"></div>
+                        <div class="dates"> <label class="enter">Valid Date*</label>
+                            <br>
+                            <select id="ex-month" required class="mon">
+                                <option disabled selected hidden>MM</option>
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <select id="ex-year" required class="year">
+                                <option disabled selected hidden>YYYY</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                            </select>
+                        </div>
+                        <div class="cvv">
+                            <label class="enter-cvv">CVV*</label>
+                            <br>
+                            <input type="number" name="" class="cvv-num"> </div>
+                        <div class="amount"> Pay $<span class="payamount">120</span></div>
+                    </div>
+                </div>
+                <div class="pay">
+                    <label class="debit"> <input type="radio" name="payment" id="pay"> <i class="fa-solid fa-credit-card card"></i> Google Pay/Wallet </label>
+                    <div class="pay-card wallet">
+                        <label class="enter">Enter Card Number*</label><br>
+                        <input type="number" name="" class="card-num"><br>
+                        <div id="validation-status"></div>
+                        <div class="dates"> <label class="enter">Valid Date*</label>
+                            <br>
+                            <select id="ex-month" required class="mon">
+                                <option disabled selected hidden>MM</option>
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                            <select id="ex-year" required class="year">
+                                <option disabled selected hidden>YYYY</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                            </select>
+                        </div>
+                        <div class="cvv">
+                            <label class="enter-cvv">CVV*</label>
+                            <br>
+                            <input type="number" name="" class="cvv-num"> </div>
+                        <div class="amount"> Pay $<span class="payamount">120</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="order">
+            <p class="your">Your Order</p>
+            <div class="your-order">
+                <div class="image">
+                    <img src="denim.jpg" alt="denim" width="70px" height="100px">
+                </div>
+                <div class="order-details">
+                    <p class="name">Denim Pro Jacket</p>
+                    <div class="size">
+                        <p>Size: XL</p>
+                        <p>Color: Blue</p>
+                    </div>
+                    <div class="price">
+                        <p class="pri-d">$64.00</p>
+                        <label>Qty:</label>
+                        <select id="quantity-d">
+                            <option>01</option>
+                            <option selected>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                        </select>
+                    </div>
+                    <div class="disc"> <i class="fa-solid fa-circle-check tick"></i> You have saved $ <span class="dis-d">1.00</span></div>
+                    <div class="remove-d">Remove</div>
+                </div>
+            </div>
+            <div class="your-order">
+                <div class="image">
+                    <img src="habour.jpg" alt="habour" width="70px" height="100px">
+                </div>
+                <div class="order-details">
+                    <p class="name">Harbour Men Grey Solid Windcheater Sporty Jacket</p>
+                    <div class="size">
+                        <p>Size: XL</p>
+                        <p>Color: Grey</p>
+                    </div>
+                    <div class="price">
+                        <p class="pri-h">$46.00</p>
+                        <label>Qty:</label>
+                        <select id="quantity-h">
+                            <option selected>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                        </select>
+                    </div>
+                    <div class="disc"> <i class="fa-solid fa-circle-check tick"></i> You have saved $<span class="dis-h">1.00<span></div>
+                    <div class="remove-h">Remove</div>
+                </div>
+            </div>
+            <div class="delivery">
+                <div class="express">
+                    <p>Delivery Charges</p>
+                    <p class="money">$10</p>
+                    <p>Express Delivery</p>
+                </div>
+                <div class="discount">
+                    <p>Coupon Discount</p>
+                    <p class="money">$0</p>
+                    <p>No Coupon Available</p>
+                </div>
+            </div>
+            <div class="total">
+                <div class="payments">Total Payment</div>
+                <div class="final">$120</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
